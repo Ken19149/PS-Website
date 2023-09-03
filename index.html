@@ -5,7 +5,31 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="slideshow-container" id="slideshow-container"></div>
         <script src="js/load-image.js"></script>
+        <div class="slideshow-container">
+            <div class="slideshow-image fade">
+                <img src="slide1_image1.jpg" alt="Slide 1 - Image 1">
+            </div>
+            <div class="slideshow-image fade">
+                <img src="slide1_image2.jpg" alt="Slide 1 - Image 2">
+            </div>
+            <!-- Add more images for Slide 1 here -->
+        </div>
+    
+        <div class="slideshow-container">
+            <div class="slideshow-image fade">
+                <img src="slide2_image1.jpg" alt="Slide 2 - Image 1">
+            </div>
+            <div class="slideshow-image fade">
+                <img src="slide2_image2.jpg" alt="Slide 2 - Image 2">
+            </div>
+            <!-- Add more images for Slide 2 here -->
+        </div>
+        
+        <script>
+			let folderPath2 = 'img/competition/';
+			readFileNames(folderPath2);
+		</script>
+        <script src="js/slideshow.js"></script>
     </body>
 </html>

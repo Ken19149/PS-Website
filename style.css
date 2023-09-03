@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade {
+    animation: fade 3s infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}

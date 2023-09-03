@@ -1,4 +1,4 @@
-(async () => {
+function readFileNames(folderPath){
     async function getImageFileNames(folderPath) {
         try {
             const response = await fetch(folderPath);
@@ -19,13 +19,14 @@
         }
     }
 
-    // Specify the folder path where your images are located
-    const folderPath = 'img/competition/';
-
-    // Call the function to get the array of image file names
-    const imageFileNames = await getImageFileNames(folderPath);
-
-    console.log('Image file names:', imageFileNames);
-
-    // Now you can use the 'imageFileNames' variable in the rest of your code
-})();
+	(async () => {
+		try {
+			let x = await getImageFileNames(folderPath);
+			console.log('Image file names for folder 1:', x);
+		} catch (error) {
+			console.error('Error for folder 1:', error);
+		}
+	})();
+}
+const folderPath1 = 'img/competition/';
+readFileNames(folderPath1);
