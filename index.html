@@ -6,30 +6,46 @@
     </head>
     <body>
         <script src="js/load-image.js"></script>
-        <div class="slideshow-container">
-            <div class="slideshow-image fade">
-                <img src="slide1_image1.jpg" alt="Slide 1 - Image 1">
+        <div class="slideshow-container"><!-- slideshow-container not needed -->
+            <div class="image-slideshow">
+
+                <div class="image fade">
+                <img src="https://iili.io/HWdl3Al.md.jpg" alt="Mountain Top">
+                </div>
+                  
+                <div class="image fade">
+                <img src="https://iili.io/HWdlRDB.md.jpg" alt="Palm Trees">
+                </div>
+                  
+                <div class="image fade">
+                <img src="https://iili.io/HWdlWDN.md.jpg" alt="Neon Sign">
+                </div>
             </div>
-            <div class="slideshow-image fade">
-                <img src="slide1_image2.jpg" alt="Slide 1 - Image 2">
+			<div class="image-slideshow">
+
+                <div class="image-1 fade">
+                <img src="https://iili.io/HWdlRDB.md.jpg" alt="Palm Trees">
+                </div>
+                  
+                <div class="image-1 fade">
+                <img src="https://iili.io/HWdl3Al.md.jpg" alt="Mountain Top">
+                </div>
+                  
+                <div class="image-1 fade">
+                <img src="https://iili.io/HWdlWDN.md.jpg" alt="Neon Sign">
+                </div>
             </div>
-            <!-- Add more images for Slide 1 here -->
-        </div>
-    
-        <div class="slideshow-container">
-            <div class="slideshow-image fade">
-                <img src="slide2_image1.jpg" alt="Slide 2 - Image 1">
-            </div>
-            <div class="slideshow-image fade">
-                <img src="slide2_image2.jpg" alt="Slide 2 - Image 2">
-            </div>
-            <!-- Add more images for Slide 2 here -->
-        </div>
-        
+		</div>
+		<div id="test-1">
+			<script>
+				document.getElementById("test-1").innerHTML = "<p>yay</p>";
+			</script>
+		</div>
         <script>
 			let folderPath2 = 'img/competition/';
 			readFileNames(folderPath2);
 		</script>
         <script src="js/slideshow.js"></script>
+		<script src="js/slideshow2.js"></script>
     </body>
 </html>

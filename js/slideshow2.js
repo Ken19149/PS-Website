@@ -3,7 +3,7 @@ function encapsulate(){
 	displayImages();
 	function displayImages() {
 	  let i;
-	  const images = document.getElementsByClassName("image");
+	  const images = document.getElementsByClassName("image-1");
 	  for (i = 0; i < images.length; i++) {
 		images[i].style.display = "none";
 	  }
