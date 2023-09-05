@@ -1,9 +1,9 @@
-function encapsulate(){
+function encapsulate(class_name){
 	let index = 0;
 	displayImages();
 	function displayImages() {
 	  let i;
-	  const images = document.getElementsByClassName("image");
+	  const images = document.getElementsByClassName(class_name);
 	  for (i = 0; i < images.length; i++) {
 		images[i].style.display = "none";
 	  }
@@ -15,4 +15,3 @@ function encapsulate(){
 	  setTimeout(displayImages, 2000); 
 	}
 }
-encapsulate();

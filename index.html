@@ -6,7 +6,9 @@
     </head>
     <body>
         <script src="js/load-image.js"></script>
-        <div class="slideshow-container"><!-- slideshow-container not needed -->
+		<script src="js/slideshow.js"></script>
+		
+        <div class="slideshow-container">
             <div class="image-slideshow">
 
                 <div class="image fade">
@@ -41,11 +43,13 @@
 				document.getElementById("test-1").innerHTML = "<p>yay</p>";
 			</script>
 		</div>
+		
+		<script>encapsulate("image")</script>
+		<script>encapsulate("image-1")</script>
+
         <script>
 			let folderPath2 = 'img/competition/';
 			readFileNames(folderPath2);
 		</script>
-        <script src="js/slideshow.js"></script>
-		<script src="js/slideshow2.js"></script>
     </body>
 </html>
