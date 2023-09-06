@@ -5,8 +5,9 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <script src="js/load-image.js"></script>
-		<script src="js/slideshow.js"></script>
+		<script src="js/slide.js"></script>
+		
+		<script id="test">slide("test", "img/competition")</script>
 		
         <div class="slideshow-container">
             <div class="image-slideshow">
@@ -22,11 +23,11 @@
                 <div class="image fade">
                 <img src="https://iili.io/HWdlWDN.md.jpg" alt="Neon Sign">
                 </div>
+			<script>showSlide("image")</script>
             </div>
-			<div class="image-slideshow">
-                  
+			<div class="image-slideshow">                  
                 <div class="image-1 fade">
-                <img src="https://iili.io/HWdl3Al.md.jpg" alt="Mountain Top">
+                <img src="https://iili.io/HWdlRDB.md.jpg" alt="Palm Trees">
                 </div>
                   
                 <div class="image-1 fade">
@@ -34,18 +35,7 @@
                 </div>
             </div>
 		</div>
-		<div id="test-1">
-			<script>
-				document.getElementById("test-1").innerHTML = "<p>yay</p>";
-			</script>
-		</div>
-		
-		<script>encapsulate("image")</script>
-		<script>encapsulate("image-1")</script>
 
-        <script>
-			let folderPath2 = 'img/competition/';
-			readFileNames(folderPath2);
-		</script>
+		<script>showSlide("image-1")</script>
     </body>
 </html>

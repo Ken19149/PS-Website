@@ -17,7 +17,7 @@ function showSlide(class_name){
 }
 
 // main function
-function slide(folderPath){
+function slide(id, folderPath){
     folderPath = folderPath.replace(/^\/+|\/+$/g, '');    // remove first and last "/"; "img/folder/subfolder"
     
     // list images file name in a folder
@@ -42,25 +42,27 @@ function slide(folderPath){
         }
     }
 
+	let slideHTML;
 	(async () => {
 		try {
 			let files = await getImageFileNames(folderPath);    // ["file.png", "xd.jpg", "etc.gif"]
-            let slideHTML = format(folderPath, files);
-            document.currentScript.outerHTML = slideHTML;
+			slideHTML = format(id, folderPath, files);			// format the html
+			const HTML_slide = document.getElementById(id);		// select element
+			HTML_slide.outerHTML = slideHTML;
+			console.log("html: " + slideHTML);
 		} catch (error) {
-			console.error('Error for folder 1:', error);
+			console.error('Error: ', error);
 		}
 	})();
 }
 
 // format
-function format(folderPath, files){
+function format(id, folderPath, files){
     folderPath = folderPath.replace(/^\/+|\/+$/g, '');    // remove first and last "/"; "img/folder/subfolder"
 
     let folderClass = folderPath.replace(/\//g, "-");
-    let folderId = "slide-" + folderClass;
 
-    let HTML_begin = "<div class=\"slideshow-container\" id=\"" + folderId + "\">" + "<div class=\"image-slide-show\">";
+    let HTML_begin = "<div class=\"slideshow-container\" id=\"" + id + "\">" + "<div class=\"image-slideshow\">";
 
     let HTML_images = "";
     for(let i in files){
@@ -71,11 +73,4 @@ function format(folderPath, files){
 
     let HTML_complete = HTML_begin + HTML_images + "</div>" + HTML_script + "</div>";
     return HTML_complete
-}
-
-const convertStringToHTML = htmlString => {
-    const parser = new DOMParser();
-    const html = parser.parseFromString(htmlString, 'text/html');
-
-    return html.body;
 }
