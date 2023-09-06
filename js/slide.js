@@ -16,10 +16,31 @@ function showSlide(class_name){
 	}
 }
 
-// main function
-function slide(id, folderPath){
+let folderClass;
+// format
+function format(id, folderPath, files){
     folderPath = folderPath.replace(/^\/+|\/+$/g, '');    // remove first and last "/"; "img/folder/subfolder"
-    
+
+    folderClass = folderPath.replace(/\//g, "-");
+
+    let HTML_begin = "<div class=\"slideshow-container\" id=\"" + id + "\">" + "<div class=\"image-slideshow\">";
+
+    let HTML_images = "";
+    for(let i in files){
+        HTML_images = HTML_images.concat("<div class=\"" + folderClass + " fade\">" + "<img src=\"" + folderPath + "/" + files[i] + "\" alt=\"" + files[i] + "\"></div>");
+    }
+
+    let HTML_script = "<script>showSlide(\"" + folderClass + "\")</script>"
+
+    let HTML_complete = HTML_begin + HTML_images + "</div>" + "</div>";
+    return HTML_complete
+}
+
+// main function
+function slide(folderPath){
+    folderPath = folderPath.replace(/^\/+|\/+$/g, '');    // remove first and last "/"; "img/folder/subfolder"
+    let id = document.currentScript.id;
+	
     // list images file name in a folder
     async function getImageFileNames(folderPath) {
         folderPath = folderPath;
@@ -49,28 +70,9 @@ function slide(id, folderPath){
 			slideHTML = format(id, folderPath, files);			// format the html
 			const HTML_slide = document.getElementById(id);		// select element
 			HTML_slide.outerHTML = slideHTML;
-			console.log("html: " + slideHTML);
+			showSlide(folderClass);
 		} catch (error) {
 			console.error('Error: ', error);
 		}
 	})();
-}
-
-// format
-function format(id, folderPath, files){
-    folderPath = folderPath.replace(/^\/+|\/+$/g, '');    // remove first and last "/"; "img/folder/subfolder"
-
-    let folderClass = folderPath.replace(/\//g, "-");
-
-    let HTML_begin = "<div class=\"slideshow-container\" id=\"" + id + "\">" + "<div class=\"image-slideshow\">";
-
-    let HTML_images = "";
-    for(let i in files){
-        HTML_images = HTML_images.concat("<div class=\"" + folderClass + " fade\">" + "<img src=\"" + folderPath + "/" + files[i] + "\" alt=\"" + files[i] + "\"></div>");
-    }
-
-    let HTML_script = "<script>showSlide(\"" + folderClass + "\")</script>"
-
-    let HTML_complete = HTML_begin + HTML_images + "</div>" + HTML_script + "</div>";
-    return HTML_complete
 }
