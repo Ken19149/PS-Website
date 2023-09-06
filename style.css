@@ -21,3 +21,38 @@ img {
   from {opacity: .4}
   to {opacity: 1}
 }
+
+/*slide layout css*/
+.main-slide-container{
+	text-align: center;
+}
+
+/*top-bottom division*/
+.top-slide-container{
+	text-align: center;
+}
+
+.bottom-slide-container{
+	text-align: center;
+}
+
+/*bottom left-right division*/
+.left-slide-container{
+	text-align: left;
+}
+
+.right-slide-container{
+	text-align: right;
+}
+
+/*bottom-right 3-part division*/
+.top-right-slide-container{
+	
+}
+.middle-right-slide-container{
+	
+}
+
+.bottom-right-slide-container{
+	
+}
