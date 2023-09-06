@@ -3,13 +3,29 @@
     <head>
         <title>Com-Sci</title>
         <link rel="stylesheet" href="style.css">
+        <script src="js/slide.js"></script>
     </head>
     <body>
-		<script src="js/slide.js"></script>
-		<script id="tri-chroma-cat">slide("img/competition")</script>
-        <script id="cute-cat">slide("img/student_work/vertical_layout")</script>
-		<script id="jellyfish">slide("img/student_work/horizontal_layout/horizontal_1")</script>
-		<script id="food">slide("img/student_work/horizontal_layout/horizontal_2")</script>
-		<script id="birbs">slide("img/student_work/horizontal_layout/horizontal_3")</script>
+        <div class="main-slide-container">
+            <div class="top-slide-container">
+                <script id="tri-chroma-cat">slide("img/competition")</script>
+            </div>
+            <div class="bottom-slide-container">
+                <div class="left-slide-container">
+                    <script id="cute-cat">slide("img/student_work/vertical_layout")</script>
+                </div>
+                <div class="right-slide-container">
+                    <div class="top-right-slide-container">
+                        <script id="jellyfish">slide("img/student_work/horizontal_layout/horizontal_1")</script>
+                    </div>
+                    <div class="middle-right-slide-container">
+                        <script id="food">slide("img/student_work/horizontal_layout/horizontal_2")</script>
+                    </div>
+                    <div class="bottom-right-slide-container">
+                        <script id="birbs">slide("img/student_work/horizontal_layout/horizontal_3")</script>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
