@@ -17,7 +17,8 @@ function showSlide(class_name){
 }
 
 let folderClass;
-// format
+// format - old version
+/*
 function format(id, folderPath, files){
     folderPath = folderPath.replace(/^\/+|\/+$/g, '');    // remove first and last "/"; "img/folder/subfolder"
 
@@ -35,6 +36,27 @@ function format(id, folderPath, files){
     let HTML_complete = HTML_begin + HTML_images + "</div>" + "</div>";
     return HTML_complete
 }
+*/
+
+// new format for css
+function format(id, folderPath, files){
+    folderPath = folderPath.replace(/^\/+|\/+$/g, '');    // remove first and last "/"; "img/folder/subfolder"
+
+    folderClass = folderPath.replace(/\//g, "-");
+
+    let HTML_begin = "<div class=\"slideshow-container\" id=\"" + id + "\">" + "<div class=\"image-slideshow\">";
+
+    let HTML_images = "";
+    for(let i in files){
+        HTML_images = HTML_images.concat("<div class=\"" + folderClass + " fade\">" + "<img src=\"" + folderPath + "/" + files[i] + "\" alt=\"" + files[i] + "\"></div>");
+    }
+
+    let HTML_script = "<script>showSlide(\"" + folderClass + "\")</script>"
+
+    let HTML_complete = HTML_begin + HTML_images + "</div>" + "</div>";
+    return HTML_complete
+}
+
 
 // main function
 function slide(folderPath){
