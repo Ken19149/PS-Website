@@ -39,7 +39,7 @@ function format(id, folderPath, files){
 */
 
 // new format for css
-function format(id, folderPath, files){
+function format(id, folderPath, files, time){
     folderPath = folderPath.replace(/^\/+|\/+$/g, '');    // remove first and last "/"; "img/folder/subfolder"
 
     folderClass = folderPath.replace(/\//g, "-");
@@ -59,7 +59,7 @@ function format(id, folderPath, files){
 
 
 // main function
-function slide(folderPath){
+function slide(folderPath, time=2){
     folderPath = folderPath.replace(/^\/+|\/+$/g, '');    // remove first and last "/"; "img/folder/subfolder"
     let id = document.currentScript.id;
 	
@@ -89,7 +89,7 @@ function slide(folderPath){
 	(async () => {
 		try {
 			let files = await getImageFileNames(folderPath);    // ["file.png", "xd.jpg", "etc.gif"]
-			slideHTML = format(id, folderPath, files);			// format the html
+			slideHTML = format(id, folderPath, files, time);			// format the html
 			const HTML_slide = document.getElementById(id);		// select element
 			HTML_slide.outerHTML = slideHTML;
 			showSlide(folderClass);

@@ -1,38 +1,28 @@
-ul {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    width:20%;
-    margin-top:5%;
-   /* position: relative;*/
-  }
-  li {
+/* old animation
+.img-competition li {
     position: absolute;
-    
-   /* left: 50%;
-   /* margin-left: -247px;*/
-   /* margin-top: 5%;*/
   }
-  li:nth-child(4) {
+.img-competition li:nth-child(4) {
     animation: xfade 16s 0s infinite;
   }
-  li:nth-child(3) {
+.img-competition  li:nth-child(3) {
     animation: xfade 16s 4s infinite;
   }
-  li:nth-child(2) {
+.img-competition  li:nth-child(2) {
     animation: xfade 16s 8s infinite;
   }
-  li:nth-child(1) {
+.img-competition  li:nth-child(1) {
     animation: xfade 16s 12s infinite;
   }
-  @keyframes xfade{
-    17% {
-      opacity:1;
-    }
-    25% {
-      opacity:0;
-    }
-    92% {
-      opacity:0;
-    }
+*/
+@keyframes fade{
+  17% {
+    opacity:1;
   }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+}
