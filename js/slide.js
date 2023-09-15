@@ -1,3 +1,4 @@
+/*  old function
 function showSlide(class_name){
 	let index = 0;
 	displayImages();
@@ -15,6 +16,7 @@ function showSlide(class_name){
 	  setTimeout(displayImages, 2000); 
 	}
 }
+*/
 
 let folderClass;
 // format - old version
@@ -44,16 +46,18 @@ function format(id, folderPath, files, time){
 
     folderClass = folderPath.replace(/\//g, "-");
 
-    let HTML_begin = "<div class=\"slideshow-container\" id=\"" + id + "\">" + "<div class=\"image-slideshow\">";
+    let HTML_begin_1 = "<div class=\"slideshow-container\" id=\"" + id + "\">";
+    let HTML_style = "<style>#" + id + " ul{list-style:none;padding:0;width:100%;} #" + id + " li{position: absolute;width:100%;}";
+    let HTML_begin_2 = "<div class=\"image-slideshow\"><ul>";
 
     let HTML_images = "";
     for(let i in files){
-        HTML_images = HTML_images.concat("<div class=\"" + folderClass + " fade\">" + "<img src=\"" + folderPath + "/" + files[i] + "\" alt=\"" + files[i] + "\"></div>");
+        HTML_images = HTML_images.concat("<li>" + "<img src=\"" + folderPath + "/" + files[i] + "\" alt=\"" + files[i] + "\"></li>");
     }
 
-    let HTML_script = "<script>showSlide(\"" + folderClass + "\")</script>"
+    let HTML_begin = HTML_begin_1 + HTML_style + HTML_begin_2;
 
-    let HTML_complete = HTML_begin + HTML_images + "</div>" + "</div>";
+    let HTML_complete = HTML_begin + HTML_images + "</ul></div></div>";
     return HTML_complete
 }
 
@@ -92,7 +96,7 @@ function slide(folderPath, time=2){
 			slideHTML = format(id, folderPath, files, time);			// format the html
 			const HTML_slide = document.getElementById(id);		// select element
 			HTML_slide.outerHTML = slideHTML;
-			showSlide(folderClass);
+			//showSlide(folderClass);                           old function
 		} catch (error) {
 			console.error('Error: ', error);
 		}
