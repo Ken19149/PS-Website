@@ -53,8 +53,10 @@ function format(id, folderPath, files, time){
     let HTML_images = "";
     for(let i in files){
         HTML_images = HTML_images.concat("<li>" + "<img src=\"" + folderPath + "/" + files[i] + "\" alt=\"" + files[i] + "\"></li>");
+        HTML_style = HTML_style.concat("#" + id + " li:nth-child(" + (files.length-i) + "){animation: fade " + (files.length * time) + "s " + ((files.length * time)-(time*i)) + "s infinite;}");
     }
 
+    HTML_style += "</style>";
     let HTML_begin = HTML_begin_1 + HTML_style + HTML_begin_2;
 
     let HTML_complete = HTML_begin + HTML_images + "</ul></div></div>";
