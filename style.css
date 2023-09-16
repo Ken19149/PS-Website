@@ -69,6 +69,7 @@ padding: 10px;
 /* Left slide container */
 .left-slide-container {
   flex: 1; /* Takes up available horizontal space */
+height: 200%;
 }
 
 /* Right slide container */
@@ -77,6 +78,7 @@ padding: 10px;
   display: flex;
   flex-direction: column;
 margin-left: 5%;
+height: 350px;
 }
 
 /* Top-right slide container */
